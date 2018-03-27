@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<ul>
+    <!--/*@thymesVar id="carnet" type="com.formation.annuaire.carnets.*"*/-->
+    <li th:text="${carnet.id}"></li>
+    <li th:text="${carnet.civilite}"></li>
+    <li th:text="${carnet.nom}"></li>
+    <li th:text="${carnet.prenom}"></li>
+    <li th:text="${carnet.dateDeNaissance}"></li>
+    <li th:text="${carnet.tel}"></li>
+    <li th:text="${carnet.email}"></li>
+    <li th:text="${carnet.cp}"></li>
+    <li th:text="${carnet.ville}"></li>
+</ul>
+<a href="/carnet">Submit another Customer Form</a>
+</body>
+</html>

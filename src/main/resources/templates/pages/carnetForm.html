@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Carnet</title>
+    <style>
+        label.labW{
+            display: inline-block;
+            width: 150px;
+        }
+        .btn{
+            margin: 10px;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Formulaire tout a fait normal renoyant vers url /carnet, les informations du formulaire afin de les traiter  -->
+<form th:action="@{/carnet}" th:object="${carnet}" method="post">
+    <label for="mr">Monsieur</label>
+    <input type="radio" id="mr" th:field="*{civilite}" value="MONSIEUR">
+    <label for="mme">Madame</label>
+    <input type="radio" id="mme" th:field="*{civilite}" value="MADAME">
+    <p th:if="${#fields.hasErrors('civilite')}" th:errors="*{civilite}"></p>
+    <br>
+    <label for="nom" class="labW">Nom</label>
+    <input type="text" id="nom" th:field="*{nom}">
+    <p th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></p>
+    <br>
+    <label for="prenom" class="labW">Prenom</label>
+    <input type="text" id="prenom" th:field="*{prenom}">
+    <p th:if="${#fields.hasErrors('prenom')}" th:errors="*{prenom}"></p>
+    <br>
+    <label for="date" class="labW">Date de naissance</label>
+    <input type="date" id="date" th:field="*{dateDeNaissance}">
+    <p th:if="${#fields.hasErrors('dateDeNaissance')}" th:errors="*{dateDeNaissance}"></p>
+    <br>
+    <label for="tel" class="labW">Téléphone</label>
+    <input type="text" id="tel" th:field="*{tel}">
+    <p th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"></p>
+    <br>
+    <label for="email" class="labW">email</label>
+    <input type="email" id="email" th:field="*{email}">
+    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    <br>
+    <label for="cp" class="labW">cp</label>
+    <input type="number" id="cp" th:field="*{cp}">
+    <p th:if="${#fields.hasErrors('cp')}" th:errors="*{cp}"></p>
+    <br>
+    <label for="ville" class="labW">ville</label>
+    <input type="text" id="ville" th:field="*{ville}">
+    <p th:if="${#fields.hasErrors('ville')}" th:errors="*{ville}"></p>
+
+    <input type="submit" value="valider" class="btn">
+
+    <input type="reset" value="Reset" class="btn"/>
+</form>
+</body>
+</html>
